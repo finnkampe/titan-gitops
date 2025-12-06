@@ -1,0 +1,47 @@
+apiVersion: v1kind: Namespacemetadata:
+
+name: public-web---apiVersion: apps/v1kind: Deploymentmetadata:
+
+name: podinfo
+
+namespace: public-webspec:
+
+selector:
+
+matchLabels:
+
+app: podinfo
+
+template:
+
+metadata:
+
+labels:
+
+app: podinfo
+
+spec:
+
+containers:
+
+- name: podinfo
+
+image: ghcr.io/stefanprodan/podinfo:6.3.3
+
+ports:
+
+- containerPort: 9898---apiVersion: v1kind: Servicemetadata:
+
+name: podinfo
+
+namespace: public-webspec:
+
+ports:
+
+- port: 9898
+
+targetPort: 9898
+
+selector:
+
+app: podinfo
