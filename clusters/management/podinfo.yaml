@@ -4,7 +4,7 @@ kind: Namespace
 
 metadata:
 
-name: public-web
+ name: public-web
 ---
 apiVersion: apps/v1
 
@@ -12,7 +12,7 @@ kind: Deployment
 
 metadata:
 
-name: podinfo
+ name: podinfo
 
 namespace: public-web
 
@@ -50,7 +50,7 @@ kind: Service
 
 metadata:
 
-name: podinfo
+ name: podinfo
 
 namespace: public-web
 
